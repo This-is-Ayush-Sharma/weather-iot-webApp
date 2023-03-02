@@ -10,4 +10,6 @@ app.use(require('express').json());
 app.use(cors())
 app.use('/',routes);
 
+global.data = {};
+
 http.listen(5000, ()=> console.log("The server is live at port 5000"));

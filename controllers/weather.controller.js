@@ -4,6 +4,9 @@ exports.showPage = (req,res)=>{
 }
 
 exports.SensorDatahandler = (req,res)=>{
-    const { temprature,humidity } = req.params;
-    
+    // const { temprature,humidity } = req.params;
+    data = req.params;
+    // console.log(`${temprature} ${humidity}`);
+    console.log(data);
+    return res.send("1"); 
 }

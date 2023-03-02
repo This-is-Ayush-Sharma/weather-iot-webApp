@@ -6,6 +6,6 @@ const weatherController = require('../controllers/weather.controller');
 
 app.get('/',weatherController.showPage);
 
-app.get('/sensorhandler',weatherController.SensorDatahandler);
+app.get('/sensorhandler/:temprature/:humidity',weatherController.SensorDatahandler);
 
 module.exports = app;
