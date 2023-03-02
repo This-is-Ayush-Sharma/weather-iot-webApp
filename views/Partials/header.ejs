@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Weather App</title>
+    <style>
+        /* Container holding the image and the text */
+        html,body{
+            height: 100vh;
+            width: 100%;
+        }
+        body{
+            /* border: 5px solid red; */
+        }
+        .containers {
+            position: relative;
+            text-align: center;
+            color: white;
+            width: 100%;
+            height: 90%;
+            /* border: 5px solid pink; */
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('topNavigation') %>
