@@ -4,9 +4,8 @@ exports.showPage = (req,res)=>{
 }
 
 exports.SensorDatahandler = (req,res)=>{
-    // const { temprature,humidity } = req.params;
     data = req.params;
-    // console.log(`${temprature} ${humidity}`);
+    data.time = new Date().toLocaleString("en-US", "Asia/Delhi");
     console.log(data);
     return res.send("1"); 
 }

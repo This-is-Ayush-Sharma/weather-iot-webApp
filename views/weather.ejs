@@ -1,10 +1,27 @@
 <%- include('Partials/header'); %>
     <div class="containers">
         <img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Weather-Background.jpg" alt="Snow" style="width:100%;">
-        <div class="bottom-left">Bottom Left</div>
-        <div class="top-left">Top Left</div>
-        <div class="top-right">Top Right</div>
-        <div class="bottom-right">Bottom Right</div>
-        <div class="centered">Centered</div>
+        <div class="bottom-left"><h2 id="bl" style="color: white;"></h2></div> 
+        <div class="top-left"><h2 id="tl"></h2></div>
+        <div class="top-right"><h2 id="tr"></h2></div>
+        <div class="bottom-right"><h2 id="br"></h2></div>
     </div>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        
+        const bottom_left = document.getElementById('bl');
+        const bottom_right = document.getElementById('br');
+        const top_left = document.getElementById('tl');
+        const top_right = document.getElementById('tr');
+        const socket = io();
+        socket.on('connect', () => console.log(socket.id));
+        socket.emit('send-data',"hi");
+        socket.on('make-update',(data)=>{
+            console.log(data);
+            bottom_left.textContent = data.temprature + "°C";
+            bottom_right.textContent = data.humidity;
+            top_left.textContent = data.time.split(",")[0];
+            top_right.textContent = data.time.split(",")[1];
+        })
+    </script>
 <%- include('Partials/footer'); %>
